@@ -28,7 +28,7 @@ function getData(path, params, callback) {
     var req = https.request(options, function(res) {
         var parts = [];
 
-        req.on('error', (err) => {
+        req.on('error', function(err) {
             callback(err);
         });
 
@@ -62,7 +62,7 @@ module.exports = {
      */
     setApiKey: function(key) {
         if(key && key.trim() != "") {
-            apiKey = key;    
+            apiKey = key;
         }
     },
 
